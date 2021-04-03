@@ -3,9 +3,8 @@
 import os
 import django
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
-    django.setup()
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+django.setup()
 
 import django.core.exceptions as exceptions
 import datacenter.models as models
@@ -35,7 +34,6 @@ def fix_marks(first_last_name):
     for entry in models.Mark.objects.filter(schoolkid=schoolkid, points__in=[2, 3]):
         entry.points = 5
         entry.save()
-    print('Оценки поправлены')
 
 
 def remove_chastisements(first_last_name):
