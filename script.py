@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
 import random
 
-import datacenter.models as models
+from datacenter import models
 
 COMMENDATION_EXAMPLES = ['Молодец!', 'Отлично!', 'Хорошо!', 'Гораздо лучше, чем я ожидал!', 'Ты меня приятно удивил!',
                          'Великолепно!', 'Прекрасно!', 'Ты меня очень обрадовал!', 'Именно этого я давно ждал от тебя!',
@@ -79,3 +79,6 @@ def create_commendation(first_last_name, lesson):
         print('Похвала создана успешно')
     else:
         print(f'Похвала на урок {last_lesson.subject} от {last_lesson.date} уже существует. Запусти функцию еще раз')
+
+
+remove_commendations('Фролов Иван')
